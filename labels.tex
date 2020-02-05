@@ -6,6 +6,8 @@
 
 \usetikzlibrary[positioning]
 
+\begin{document}
+
 \newcommand{\width}{6}
 \newcommand{\height}{9}
 \newcommand{\margin}{0.5}
@@ -15,16 +17,8 @@
 \newcommand{\abv}{8.40\%}
 \newcommand{\bottledate}{01-02-2020}
 
-\begin{document}
-
-\begin{tikzpicture}
-
-\tikzstyle{beerlabel}=[rectangle, draw, minimum width=6cm, minimum height=9cm]
-\tikzstyle{namelabel}=[text width=5cm, font=\LARGE\ttfamily]
-\tikzstyle{valuelabel}=[text width=5cm, font=\large\ttfamily]
-\tikzstyle{label}=[text width=5cm, align=right, font=\footnotesize\ttfamily]
-
-\node [beerlabel] (label) at (0,0) {};
+\newcommand{\createlabel}[2]{
+\node [beerlabel] (label) at (#1,#2) {};
 
 \node [namelabel] (name) [below = of label.north] {\beername};
 \draw (name.south west) -- (name.south east);
@@ -41,6 +35,27 @@
 \node [valuelabel] (style) [above = 1cm of abv] {\beerstyle};
 \draw (style.south west) -- (style.south east);
 \node [label] (stylelabel) [below = 0 of style] {Style};
+}
+
+
+\begin{tikzpicture}
+
+\tikzstyle{beerlabel}=[rectangle, draw, minimum width=6cm, minimum height=9cm]
+\tikzstyle{namelabel}=[text width=5cm, font=\LARGE\ttfamily]
+\tikzstyle{valuelabel}=[text width=5cm, font=\large\ttfamily]
+\tikzstyle{label}=[text width=5cm, align=right, font=\footnotesize\ttfamily]
+
+\createlabel{0}{0}
+\createlabel{6.5}{0}
+\createlabel{13}{0}
+
+\createlabel{0}{9.5}
+\createlabel{6.5}{9.5}
+\createlabel{13}{9.5}
+
+\createlabel{0}{19}
+\createlabel{6.5}{19}
+\createlabel{13}{19}
 
 \end{tikzpicture}
 
