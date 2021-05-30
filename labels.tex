@@ -12,10 +12,10 @@
 \newcommand{\height}{9}
 \newcommand{\margin}{0.5}
 
-\newcommand{\beername}{Black Hole Son}
-\newcommand{\beerstyle}{Imperial stout}
-\newcommand{\abv}{8.40\%}
-\newcommand{\bottledate}{01-02-2020}
+\newcommand{\beername}{Pam Grier}
+\newcommand{\beerstyle}{American Brown Ale} 
+\newcommand{\abv}{5.5-6\%}
+\newcommand{\bottledate}{07-02-2021}
 
 \newcommand{\createlabel}[2]{
 \node [beerlabel] (label) at (#1,#2) {};
@@ -28,11 +28,11 @@
 \draw (bottledate.south west) -- (bottledate.south east);
 \node [label] (bottledlabel) [below = 0 of bottledate] {Bottled};
 
-\node [valuelabel] (abv) [above = 1cm of bottledate] {\abv};
+\node [valuelabel] (abv) [above = 0.5cm of bottledate] {\abv};
 \draw (abv.south west) -- (abv.south east);
 \node [label] (abvlabel) [below = 0 of abv] {ABV};
 
-\node [valuelabel] (style) [above = 1cm of abv] {\beerstyle};
+\node [valuelabel] (style) [above = 0.5cm of abv] {\beerstyle};
 \draw (style.south west) -- (style.south east);
 \node [label] (stylelabel) [below = 0 of style] {Style};
 }
